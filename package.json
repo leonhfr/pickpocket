@@ -1,0 +1,78 @@
+{
+  "name": "pickpocket-md",
+  "version": "1.0.0",
+  "description": "Converts pocket articles to markdown",
+  "main": "./build/cli.js",
+  "types": "./build/cli.d.ts",
+  "bin": {
+    "pickpocket": "./build/cli.js"
+  },
+  "scripts": {
+    "bin": "ts-node ./src/cli.ts",
+    "build": "tsc",
+    "clean": "rimraf build",
+    "prepublishOnly": "npm run clean && npm run build",
+    "release": "np --no-cleanup",
+    "test": "jest --testPathPattern='./src/*' --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonhfr/pickpocket.git"
+  },
+  "keywords": [
+    "pocket",
+    "markdown"
+  ],
+  "author": "leonhfr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonhfr/pickpocket/issues"
+  },
+  "homepage": "https://github.com/leonhfr/pickpocket#readme",
+  "dependencies": {
+    "@postlight/mercury-parser": "2.2.0",
+    "commander": "5.1.0",
+    "conf": "6.2.4",
+    "inquirer": "7.1.0",
+    "node-fetch": "2.6.0",
+    "slug": "^3.2.0",
+    "tslib": "2.0.0",
+    "update-notifier": "4.1.0",
+    "uuid": "8.1.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "6.5.0",
+    "@types/jest": "25.2.3",
+    "@types/node": "12.12.31",
+    "@types/node-fetch": "2.5.7",
+    "@types/postlight__mercury-parser": "2.2.2",
+    "@types/slug": "0.9.1",
+    "@types/update-notifier": "4.1.0",
+    "@types/uuid": "8.0.0",
+    "eslint": "7.1.0",
+    "jest": "26.0.1",
+    "ts-jest": "26.0.0",
+    "ts-node": "8.10.1",
+    "typescript": "3.9.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
