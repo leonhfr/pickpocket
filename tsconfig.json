@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "importHelpers": true,
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "pretty": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./build",
+    "rootDir": "./src"
+  },
+  "exclude": ["node_modules", "build"]
+}
